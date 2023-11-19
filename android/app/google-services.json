@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "473187107248",
+    "project_id": "fady-notes",
+    "storage_bucket": "fady-notes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473187107248:android:21684e3eb80f62e5c61675",
+        "android_client_info": {
+          "package_name": "com.fadyfawzy.notes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwWZ9MmB19_PQOCY7Zuj08cnnOzACmzKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

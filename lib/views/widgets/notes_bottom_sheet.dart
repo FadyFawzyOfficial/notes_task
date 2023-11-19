@@ -19,6 +19,7 @@ class _NotesBottomSheetState extends State<NotesBottomSheet> {
   final formKey = GlobalKey<FormState>();
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
+  late int selectedColor;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class _NotesBottomSheetState extends State<NotesBottomSheet> {
             formKey: formKey,
             titleController: titleController,
             descriptionController: descriptionController,
+            selectColor: (color) => selectedColor = color.value,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 32),
@@ -61,7 +63,7 @@ class _NotesBottomSheetState extends State<NotesBottomSheet> {
                           title: titleController.text,
                           description: descriptionController.text,
                           date: DateTime.now().format(),
-                          color: Colors.amberAccent.value,
+                          color: selectedColor,
                         );
 
                         context.read<AddNoteCubit>().addNote(note: note);

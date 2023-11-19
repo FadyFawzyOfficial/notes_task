@@ -17,7 +17,7 @@ class MainTextFormField extends StatelessWidget {
     this.keyboardType,
     this.obscureText = false,
     this.initialValue,
-    this.maxLines,
+    this.maxLines = 1,
   });
 
   @override

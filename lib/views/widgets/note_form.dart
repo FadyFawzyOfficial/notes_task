@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'colors_list_view.dart';
 import 'main_text_form_field.dart';
 
 class NoteForm extends StatelessWidget {
@@ -8,6 +9,8 @@ class NoteForm extends StatelessWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController titleController;
   final TextEditingController descriptionController;
+  final Function(Color) selectColor;
+  final int? initialColor;
 
   const NoteForm({
     super.key,
@@ -16,6 +19,8 @@ class NoteForm extends StatelessWidget {
     required this.formKey,
     required this.titleController,
     required this.descriptionController,
+    required this.selectColor,
+    this.initialColor,
   });
 
   @override
@@ -31,14 +36,20 @@ class NoteForm extends StatelessWidget {
               titleController.text = value ?? '';
             },
           ),
-          const SizedBox(height: 16),
-          MainTextFormField(
-            maxLines: 5,
-            label: 'Content',
-            initialValue: description,
-            onSaved: (value) {
-              descriptionController.text = value ?? '';
-            },
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: MainTextFormField(
+              maxLines: 5,
+              label: 'Content',
+              initialValue: description,
+              onSaved: (value) {
+                descriptionController.text = value ?? '';
+              },
+            ),
+          ),
+          ColorsListView(
+            selectColor: selectColor,
+            initialColor: initialColor,
           ),
         ],
       ),
