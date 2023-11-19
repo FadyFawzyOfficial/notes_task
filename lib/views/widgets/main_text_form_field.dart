@@ -29,7 +29,7 @@ class MainTextFormField extends StatelessWidget {
       initialValue: initialValue,
       maxLines: maxLines,
       validator: (value) =>
-          value == null || value.isEmpty ? 'This field is required' : null,
+          value?.isEmpty ?? true ? 'This field is required' : null,
       decoration: InputDecoration(
         labelText: label,
         border: const OutlineInputBorder(),

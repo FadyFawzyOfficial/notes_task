@@ -13,6 +13,7 @@ class NotesFab extends StatelessWidget {
         showModalBottomSheet(
           context: context,
           shape: kRoundedRectangleBorder16,
+          isScrollControlled: true,
           builder: (context) => const NotesBottomSheet(),
         );
       },
