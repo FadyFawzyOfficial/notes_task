@@ -62,10 +62,11 @@ class AuthCubit extends HydratedCubit<AuthState> {
     }
   }
 
+  void signOut() => emit(AuthState.initial());
+
   @override
   AuthState? fromJson(Map<String, dynamic> json) => AuthState.fromMap(json);
 
   @override
-  Map<String, dynamic>? toJson(AuthState state) =>
-      state.authStatus == AuthStatus.authenticated ? state.toMap() : null;
+  Map<String, dynamic>? toJson(AuthState state) => state.toMap();
 }

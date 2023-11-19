@@ -11,7 +11,7 @@ import 'cubits/notes/notes_cubit.dart';
 import 'firebase_options.dart';
 import 'models/note.dart';
 import 'simple_bloc_observer.dart';
-import 'views/notes_view.dart';
+import 'views/home_view.dart';
 import 'views/sign_in_view.dart';
 import 'views/sign_up_view.dart';
 
@@ -58,10 +58,10 @@ class App extends StatelessWidget {
             routes: {
               kSignInView: (context) => const SignInView(),
               kSignUpView: (context) => const SignUpView(),
-              kHomeView: (context) => const NotesView(),
+              kHomeView: (context) => const HomeView(),
             },
             home: state.authStatus == AuthStatus.authenticated
-                ? const NotesView()
+                ? const HomeView()
                 : const SignInView(),
           );
         },
